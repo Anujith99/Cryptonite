@@ -1,0 +1,21 @@
+@import "_colors.scss";
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    $primary 0%,
+    rgba(47, 33, 173, 0.7) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 1160px;
+  margin: auto;
+  padding-left: 60px;
+  padding-right: 60px;
+}

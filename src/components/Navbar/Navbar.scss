@@ -1,0 +1,67 @@
+@import "styles/_colors.scss";
+@import "styles/_mixins.scss";
+.navbar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  margin-top: 60px !important;
+
+  .navbar-logo {
+    cursor: pointer;
+    margin-top: 7px;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .nav-link {
+    font-style: normal;
+    font-weight: 500;
+    color: $white;
+    text-decoration: none;
+    padding: 0.9rem 0.8rem;
+    @include set-border-radius(10px);
+
+    &:hover {
+      @include bg-glass;
+    }
+  }
+
+  .fa-bars,
+  .fa-times {
+    color: $white;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+}
+
+.dropdown-menu {
+  width: 200px;
+  position: absolute;
+  top: 80px;
+  list-style: none;
+  text-align: start;
+
+  li {
+    background: $white;
+    cursor: pointer;
+  }
+}
