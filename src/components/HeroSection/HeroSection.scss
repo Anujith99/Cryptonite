@@ -1,0 +1,75 @@
+@import "styles/_mixins.scss";
+@import "styles/_variables.scss";
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .hero-quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 480px;
+    margin-right: 60px;
+    position: relative;
+
+    @include for-size($medium-desktop) {
+      margin-right: 30px;
+    }
+
+    @include for-size($tablet) {
+      margin-right: 0;
+    }
+
+    #left-quote {
+      position: absolute;
+      top: 6%;
+      left: 0;
+
+      @include for-size($mobile) {
+        top: 0%;
+      }
+    }
+
+    #right-quote {
+      position: absolute;
+      bottom: 23%;
+      right: 8%;
+
+      @include for-size($mobile) {
+        bottom: 16%;
+      }
+    }
+
+    .hero-quote-text {
+      font-size: 45px;
+      font-weight: 600;
+      line-height: 56px;
+      padding-left: 25px;
+
+      @include for-size($mobile) {
+        font-size: 36px;
+        line-height: 40px;
+      }
+    }
+
+    .hero-quote-subtext {
+      font-weight: 500;
+      font-size: 28px;
+      padding-left: 25px;
+      margin: 0;
+    }
+  }
+
+  .hero-img {
+    width: 100%;
+    height: auto;
+  }
+
+  @include for-size($tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
