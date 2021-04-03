@@ -1,0 +1,17 @@
+@mixin bg-glass {
+  background: linear-gradient(
+    180deg,
+    rgba(222, 222, 222, 0.6) -51.28%,
+    rgba(196, 196, 196, 0.2) 189.77%
+  );
+}
+
+@mixin set-border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin for-size($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
