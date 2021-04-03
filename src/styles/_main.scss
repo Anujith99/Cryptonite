@@ -1,4 +1,5 @@
-@import "_colors.scss";
+@import "_variables.scss";
+@import "_mixins.scss";
 
 body {
   height: 100%;
@@ -18,4 +19,14 @@ body {
   margin: auto;
   padding-left: 60px;
   padding-right: 60px;
+
+  @include for-size($tablet) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include for-size($mobile) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }

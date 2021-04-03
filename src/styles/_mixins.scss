@@ -9,3 +9,9 @@
 @mixin set-border-radius($radius) {
   border-radius: $radius;
 }
+
+@mixin for-size($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}

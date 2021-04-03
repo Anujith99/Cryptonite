@@ -1,5 +1,6 @@
-@import "styles/_colors.scss";
+@import "styles/_variables.scss";
 @import "styles/_mixins.scss";
+
 .navbar {
   height: 60px;
   display: flex;
@@ -11,12 +12,44 @@
   .navbar-logo {
     cursor: pointer;
     margin-top: 7px;
+
+    @include for-size($small-mobile) {
+      transform-origin: left;
+      transform: scale(0.8);
+    }
   }
 
   .nav-menu {
     display: flex;
+    align-items: center;
     list-style: none;
     padding-left: 0;
+
+    @include for-size($tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100vw;
+      height: fit-content;
+      margin-top: 2em;
+      padding: 30px 40px;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      transform: translate3d(-100vw, 0, 0);
+      opacity: 1;
+      transition: all 0.5s ease;
+
+      &.active {
+        background: $primary;
+        transform: translate3d(0vw, 0, 0);
+        z-index: 200;
+      }
+    }
+
+    @include for-size($mobile) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
 
   .nav-item {
@@ -28,6 +61,33 @@
     &:last-child {
       margin-right: 0;
     }
+    &:last-child:hover {
+      .nav-link.dropdown {
+        @include bg-glass;
+      }
+    }
+
+    @include for-size($tablet) {
+      width: max-content;
+      margin: 12px 0px 12px -8px;
+      &:first-child {
+        margin-top: 0;
+        margin-left: -8px;
+      }
+      &:last-child {
+        margin-bottom: 0;
+        margin-left: -8px;
+      }
+
+      & {
+        .nav-link.dropdown.active {
+          width: fit-content;
+          @include bg-glass;
+          border-bottom-left-radius: 0%;
+          border-bottom-right-radius: 0%;
+        }
+      }
+    }
   }
 
   .nav-link {
@@ -38,8 +98,23 @@
     padding: 0.9rem 0.8rem;
     @include set-border-radius(10px);
 
+    &.dropdown {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      cursor: pointer;
+    }
+
     &:hover {
       @include bg-glass;
+    }
+
+    @include for-size($tablet) {
+      padding: 10px 8px;
+      &.dropdown {
+        margin-top: -10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
     }
   }
 
@@ -50,18 +125,11 @@
 
   .menu-icon {
     display: none;
-  }
-}
 
-.dropdown-menu {
-  width: 200px;
-  position: absolute;
-  top: 80px;
-  list-style: none;
-  text-align: start;
-
-  li {
-    background: $white;
-    cursor: pointer;
+    @include for-size($tablet) {
+      padding: 5px 15px;
+      display: block;
+      cursor: pointer;
+    }
   }
 }

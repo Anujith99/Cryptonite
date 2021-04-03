@@ -2,9 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { CRYPTO_TYPES } from "helpers/constants";
 
+import "./Dropdown.scss";
+
 class Dropdown extends React.Component {
   state = {
-    menuActive: false,
+    clicked: false,
+  };
+
+  handleClick = () => {
+    // this.setState({ clicked: true });
+    this.props.closeMobileMenu();
   };
 
   render() {
@@ -12,18 +19,12 @@ class Dropdown extends React.Component {
       <>
         <ul
           onClick={this.handleClick}
-          className={
-            this.state.menuActive ? "dropdown-menu active" : "dropdown-menu"
-          }
+          className={`dropdown-menu ${this.state.clicked ? "clicked" : ""}`}
         >
           {CRYPTO_TYPES.map((item, index) => {
             return (
               <li key={index}>
-                <Link
-                  className="dropdown-link"
-                  to={item.path}
-                  onClick={() => this.setState({ menuActive: false })}
-                >
+                <Link className="dropdown-link" to={item.path}>
                   {item.text}
                 </Link>
               </li>

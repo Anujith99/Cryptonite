@@ -1,0 +1,49 @@
+@import "styles/_variables.scss";
+@import "styles/_mixins.scss";
+
+.dropdown-menu {
+  @include bg-glass;
+  width: fit-content;
+  position: absolute;
+  padding: 0.8rem 0.8rem;
+  top: 119px;
+  list-style: none;
+  text-align: start;
+  @include set-border-radius(10px);
+  border-top-left-radius: 0px;
+
+  &.clicked {
+    display: none;
+  }
+
+  @include for-size($tablet) {
+    @include bg-glass;
+    position: relative;
+    width: 100%;
+    top: 0px;
+  }
+
+  li {
+    cursor: pointer;
+    margin: 10px 0px;
+    padding: 0.5rem 0.5rem;
+    @include set-border-radius(10px);
+
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      background: rgba($color: $white, $alpha: 0.3);
+    }
+  }
+
+  .dropdown-link {
+    width: 100%;
+    color: $white;
+    text-decoration: none;
+  }
+}
