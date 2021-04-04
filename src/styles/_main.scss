@@ -5,6 +5,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: "Raleway", sans-serif;
+  color: $white;
   background: linear-gradient(
     to bottom,
     $primary 0%,
@@ -17,16 +18,16 @@ body {
 .container {
   max-width: 1160px;
   margin: auto;
-  padding-left: 60px;
-  padding-right: 60px;
+}
+
+.section {
+  padding: 10vh 60px;
 
   @include for-size($tablet) {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 7vh 40px;
   }
 
   @include for-size($mobile) {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 5vh 30px;
   }
 }
