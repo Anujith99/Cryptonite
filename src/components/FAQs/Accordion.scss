@@ -8,6 +8,10 @@
   @include for-size($mobile) {
     padding: 10px 25px;
   }
+
+  @include for-size($small-mobile) {
+    padding: 10px 20px;
+  }
 }
 
 .accordion {

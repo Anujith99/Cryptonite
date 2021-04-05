@@ -76,7 +76,8 @@
     }
     &:last-child:hover {
       .nav-link.dropdown {
-        @include bg-glass;
+        transition: all 0.4s ease;
+        background: rgba($color: $white, $alpha: 0.2);
       }
     }
 
@@ -95,7 +96,8 @@
       & {
         .nav-link.dropdown.active {
           width: fit-content;
-          @include bg-glass;
+          transition: background 0.4s ease;
+          background: rgba($color: $white, $alpha: 0.2);
           border-bottom-left-radius: 0%;
           border-bottom-right-radius: 0%;
         }
@@ -118,7 +120,8 @@
     }
 
     &:hover {
-      @include bg-glass;
+      transition: all 0.4s ease;
+      background: rgba($color: $white, $alpha: 0.2);
     }
 
     @include for-size($tablet) {
