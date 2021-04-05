@@ -1,0 +1,21 @@
+@import "styles/_mixins.scss";
+
+.slider-header {
+  font-weight: 600;
+  font-size: 40px;
+  font-variant: small-caps;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.slider-card {
+  max-width: 400px;
+  height: 430px;
+  margin: 0px 15px;
+  @include bg-glass;
+  @include set-border-radius(20px);
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
