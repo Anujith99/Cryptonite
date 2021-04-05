@@ -13,6 +13,8 @@ class NewsSection extends React.Component {
             Stay up to date with the happenings in the cryptocurrency world.
           </h6>
           <Slider type="Articles" />
+          <Slider type="Videos" />
+          <Slider type="Podcasts" />
         </div>
       </section>
     );
