@@ -2,11 +2,11 @@ export const settings = {
   dots: false,
   infinite: false,
   speed: 500,
-  centerPadding: "30px",
   slidesToShow: 3,
   slidesToScroll: 1,
   initialSlide: 0,
   swipeToSlide: true,
+
   responsive: [
     {
       breakpoint: 990,
@@ -18,6 +18,16 @@ export const settings = {
       breakpoint: 600,
       settings: {
         slidesToShow: 1,
+        centerMode: true,
+        centerPadding: "30px",
+      },
+    },
+    {
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 1,
+        centerMode: true,
+        centerPadding: "10px",
       },
     },
   ],

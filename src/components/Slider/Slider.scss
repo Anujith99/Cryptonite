@@ -17,9 +17,21 @@
   overflow: hidden;
   @include bg-glass;
   @include set-border-radius(20px);
+  cursor: pointer;
+
+  &:hover {
+    .slider-text {
+      transition: all 0.4s ease-in-out;
+      color: $primary;
+    }
+  }
 
   &:first-child {
     margin-left: 0;
+  }
+
+  @include for-size(600px) {
+    margin: 12px;
   }
 
   @include for-size($mobile) {
@@ -76,4 +88,21 @@
       }
     }
   }
+}
+
+//CLASS GIVEN TO DEFAULT ARROWS IN REACT SLICK
+.slick-disabled {
+  display: none !important;
+}
+
+.slick-next::before,
+.slick-prev::before {
+  font-size: 35px !important;
+  @include for-size(600px) {
+    font-size: 30px !important;
+  }
+}
+
+.slick-list {
+  padding-left: 0 !important;
 }
