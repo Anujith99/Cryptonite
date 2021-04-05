@@ -1,0 +1,94 @@
+@import "styles/_mixins.scss";
+@import "styles/_variables.scss";
+@import "styles/_animations.scss";
+
+@mixin set-item-padding {
+  padding: 15px 30px;
+
+  @include for-size($mobile) {
+    padding: 10px 25px;
+  }
+
+  @include for-size($small-mobile) {
+    padding: 10px 20px;
+  }
+}
+
+.accordion {
+  width: 100%;
+  max-width: $tablet;
+  margin: 0 auto;
+  border: 1px solid $white;
+  @include set-border-radius(15px);
+  overflow: hidden;
+
+  .accordion-item {
+    cursor: pointer;
+
+    &:hover {
+      transition: all 0.4s ease;
+      background: rgba($color: $white, $alpha: 0.2);
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $white;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .accordion-item-header {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      font-weight: 500;
+      font-size: 24px;
+      @include set-item-padding;
+
+      @include for-size($mobile) {
+        font-size: 20px;
+      }
+
+      .expand-icon {
+        flex-shrink: 0;
+        margin-top: 5px;
+        @include accordion-icon-before;
+      }
+    }
+
+    .accordion-item-text {
+      opacity: 0;
+      max-height: 0;
+      overflow-y: hidden;
+      font-weight: 500px;
+      font-size: 20px;
+      line-height: 28px;
+      transition: all 0.3s ease-in-out;
+
+      @include for-size($mobile) {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+
+    &.open {
+      .accordion-item-header {
+        background-color: $white;
+        color: $primary;
+
+        .expand-icon {
+          @include accordion-icon-after;
+        }
+      }
+
+      .accordion-item-text {
+        @include bg-glass;
+        max-height: 1000px;
+        opacity: 1;
+        @include set-item-padding;
+        padding-bottom: 15px;
+      }
+    }
+  }
+}

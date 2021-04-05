@@ -2,22 +2,22 @@
 @import "styles/_mixins.scss";
 
 .dropdown-menu {
-  @include bg-glass;
+  background: rgba($color: $white, $alpha: 0.2);
   width: fit-content;
   position: absolute;
   padding: 0.8rem 0.8rem;
-  top: 119px;
+  top: 109px;
   list-style: none;
   text-align: start;
   @include set-border-radius(10px);
   border-top-left-radius: 0px;
+  transition: all 0.4s ease;
 
   &.clicked {
     display: none;
   }
 
   @include for-size($tablet) {
-    @include bg-glass;
     position: relative;
     width: 100%;
     top: 0px;

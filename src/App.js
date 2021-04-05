@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from "components/Navbar/Navbar";
-import HeroSection from "components/HeroSection/HeroSection";
+import HomePage from "components/HomePage";
 
 class App extends React.Component {
   render() {
     return (
       <div>
         <Navbar />
-        <HeroSection />
+        <HomePage />
       </div>
     );
   }
