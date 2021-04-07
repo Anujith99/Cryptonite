@@ -12,7 +12,7 @@ class CryptoSection extends React.Component {
           <h3 className="section-header">Popular Cryptocurrencies</h3>
           <h6 className="section-paragraph">
             With interactive graphs and latest statistics, you can be the crypto
-            nerd of your friend circle.
+            guru of your friend circle.
           </h6>
           <div className="crypto-cards">
             {CRYPTO_TYPES.map((crypto, index) => (
