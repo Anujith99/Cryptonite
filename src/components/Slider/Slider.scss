@@ -101,6 +101,29 @@
   @include for-size(600px) {
     font-size: 30px !important;
   }
+
+  // @include for-size($mobile) {
+  //   font-size: 25px !important;
+  // }
+}
+
+.slick-next::before {
+  @include for-size($mobile) {
+    position: absolute;
+    right: -14%;
+  }
+}
+
+.slick-prev::before {
+  position: absolute;
+  right: 1%;
+  @include for-size($tablet) {
+    right: 0%;
+    left: -10px;
+  }
+  @include for-size($mobile) {
+    left: -5px;
+  }
 }
 
 .slick-list {
