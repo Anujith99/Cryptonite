@@ -103,6 +103,25 @@
   }
 }
 
+.slick-next::before {
+  @include for-size($mobile) {
+    position: absolute;
+    right: -14%;
+  }
+}
+
+.slick-prev::before {
+  position: absolute;
+  right: 1%;
+  @include for-size($tablet) {
+    right: 0%;
+    left: -10px;
+  }
+  @include for-size($mobile) {
+    left: -5px;
+  }
+}
+
 .slick-list {
   padding-left: 0 !important;
 }

@@ -28,6 +28,7 @@
     margin: 10px 0px;
     padding: 0.5rem 0.5rem;
     @include set-border-radius(10px);
+    transition: all 0.2s ease;
 
     &:first-child {
       margin-top: 0;
