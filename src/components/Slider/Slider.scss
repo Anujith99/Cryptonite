@@ -101,10 +101,6 @@
   @include for-size(600px) {
     font-size: 30px !important;
   }
-
-  // @include for-size($mobile) {
-  //   font-size: 25px !important;
-  // }
 }
 
 .slick-next::before {
