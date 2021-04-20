@@ -1,10 +1,9 @@
-import { GET_ARTICLES } from "./types";
+import { GET_ARTICLES, GET_VIDEOS, GET_AUDIO } from "./types";
 import { articleAPI } from "helpers/api";
 
 import { ARTICLES, VIDEOS, AUDIO } from "helpers/constants";
 
 export const getArticles = (keyword, params) => {
-  console.log("Articles");
   // return async (dispatch) => {
   //   articleAPI
   //     .get("", { params })
@@ -18,21 +17,31 @@ export const getArticles = (keyword, params) => {
   //     .catch((err) => console.log(err));
   // };
   return (dispatch) => {
-    dispatch({ type: GET_ARTICLES });
+    dispatch({
+      type: GET_ARTICLES,
+      name: keyword,
+      payload: [],
+    });
   };
 };
 
 export const getVideos = (keyword, params) => {
-  console.log("Videos");
   return (dispatch) => {
-    dispatch({ type: GET_ARTICLES });
+    dispatch({
+      type: GET_VIDEOS,
+      name: keyword,
+      payload: [],
+    });
   };
 };
 
 export const getAudio = (keyword, params) => {
-  console.log("Audio");
   return (dispatch) => {
-    dispatch({ type: GET_ARTICLES });
+    dispatch({
+      type: GET_AUDIO,
+      name: keyword,
+      payload: [],
+    });
   };
 };
 
