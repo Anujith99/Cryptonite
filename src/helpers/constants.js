@@ -5,7 +5,7 @@ export const AUDIO = "audio";
 export const CRYPTOCURRENCY = "cryptocurrency";
 export const BITCOIN = "bitcoin";
 export const LITECOIN = "litecoin";
-export const ETHEREUM = "cryptocurrency";
+export const ETHEREUM = "ethereum";
 
 export const CRYPTO_TYPES = [
   {
