@@ -6,6 +6,11 @@
   font-size: 40px;
   font-variant: small-caps;
   margin-bottom: 30px;
+  letter-spacing: 0.05em;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
 }
 
 .slider-card {

@@ -1,6 +1,8 @@
 import React from "react";
 import Slider from "../Slider/Slider";
 
+import { NEWS_TYPES } from "helpers/constants";
+
 class NewsSection extends React.Component {
   render() {
     return (
@@ -12,9 +14,9 @@ class NewsSection extends React.Component {
           <h6 className="section-paragraph">
             Stay up to date with the happenings in the cryptocurrency world.
           </h6>
-          <Slider type="Articles" />
-          <Slider type="Videos" />
-          <Slider type="Podcasts" />
+          {NEWS_TYPES.map((type, index) => (
+            <Slider key={index} type={type} category={this.props.category} />
+          ))}
         </div>
       </section>
     );
