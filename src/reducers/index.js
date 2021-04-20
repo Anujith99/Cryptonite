@@ -1,6 +1,9 @@
 import { combineReducers } from "redux";
-import newsReducer from "./newsReducer";
+import { createNewsReducer } from "./newsReducer";
 
 export default combineReducers({
-  news: newsReducer,
+  cryptocurrency: createNewsReducer("cryptocurrency"),
+  bitcoin: createNewsReducer("bitcoin"),
+  ethereum: createNewsReducer("ethereum"),
+  litecoin: createNewsReducer("litecoin"),
 });

@@ -1,3 +1,12 @@
+export const ARTICLES = "articles";
+export const VIDEOS = "videos";
+export const AUDIO = "audio";
+
+export const CRYPTOCURRENCY = "cryptocurrency";
+export const BITCOIN = "bitcoin";
+export const LITECOIN = "litecoin";
+export const ETHEREUM = "cryptocurrency";
+
 export const CRYPTO_TYPES = [
   {
     id: "bitcoin",
@@ -18,3 +27,6 @@ export const CRYPTO_TYPES = [
     imageURL: "resources/litecoin.svg",
   },
 ];
+
+export const NEWS_TYPES = [ARTICLES, VIDEOS, AUDIO];
+export const NEWS_CATEGORIES = [CRYPTOCURRENCY, BITCOIN, LITECOIN, ETHEREUM];

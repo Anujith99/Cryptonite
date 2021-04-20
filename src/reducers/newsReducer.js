@@ -4,16 +4,22 @@ import { produce } from "immer";
 
 const initialState = {
   articles: [],
+  videos: [],
+  audio: [],
 };
 
-export default function (state = initialState, action) {
-  return produce(state, (draft) => {
-    switch (action.type) {
-      case GET_ARTICLES:
-        draft.articles.push(...action.payload.data);
-        break;
-      default:
-        break;
-    }
-  });
-}
+export const createNewsReducer = (reducerName) => {
+  return function (state = initialState, action) {
+    const { name } = action;
+    if (name !== reducerName) return state;
+    return produce(state, (draft) => {
+      switch (action.type) {
+        case GET_ARTICLES:
+          draft.articles.push(...action.payload);
+          break;
+        default:
+          break;
+      }
+    });
+  };
+};
