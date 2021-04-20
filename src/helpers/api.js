@@ -7,7 +7,7 @@ export const articleAPI = axios.create({
   },
   params: {
     countries: "us,au,gb,sg,in,ca",
-    sources: "cnn,bbc,yahoo,guardian,cnbc",
+    sources: "cnn,bbc,yahoo,guardian",
     languages: "en",
     sort: "popularity",
   },
