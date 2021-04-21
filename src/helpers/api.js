@@ -12,3 +12,12 @@ export const articleAPI = axios.create({
     sort: "popularity",
   },
 });
+
+export const videoAPI = axios.create({
+  baseURL: "https://www.googleapis.com/youtube/v3/search",
+  params: {
+    key: process.env.REACT_APP_VIDEOS_API_KEY,
+    part: "snippet",
+    type: "video",
+  },
+});

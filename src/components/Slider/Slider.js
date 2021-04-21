@@ -18,13 +18,13 @@ class Slider extends React.Component {
   }
 
   render() {
-    const { items } = this.props;
+    const { items, type } = this.props;
     return (
       <div>
-        <h5 className="slider-header">{this.props.type}</h5>
+        <h5 className="slider-header">{type}</h5>
         <ReactSlider {...settings}>
           {items.map((item, index) => (
-            <SliderCard key={index} item={item} />
+            <SliderCard key={index} item={item} type={type} />
           ))}
         </ReactSlider>
       </div>
