@@ -9,11 +9,18 @@ import { settings } from "./SliderSettings";
 import { fetchSliderItems } from "actions/actions";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { AUDIO } from "helpers/constants";
 
 class Slider extends React.Component {
   componentDidMount() {
     const { type, category } = this.props;
     let params = {};
+    if (type === AUDIO) {
+      params = {
+        term: category,
+        limit: 5,
+      };
+    }
     this.props.fetchSliderItems(type, category, params);
   }
 
