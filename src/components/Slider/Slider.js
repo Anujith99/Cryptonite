@@ -43,11 +43,13 @@ class Slider extends React.Component {
   };
 
   render() {
-    const { items, type } = this.props;
+    const { items, type, isLoading } = this.props;
     return (
       <div>
         <h5 className="slider-header">{type}</h5>
-        {!items.length ? null : (
+        {isLoading ? (
+          <h4>Loading...</h4>
+        ) : (
           <ReactSlider {...settings}>
             {items.map((item, index) => (
               <SliderCard key={index} item={item} type={type} />
@@ -64,6 +66,7 @@ const mapStateToProps = (state, ownProps) => {
   const topic = state[category];
   return {
     items: topic[type],
+    isLoading: state.loading[`${type}Loading`],
   };
 };
 
