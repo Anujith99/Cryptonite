@@ -2,14 +2,17 @@ import {
   GET_ARTICLES,
   GET_VIDEOS,
   GET_AUDIO,
-  GET_ARTICLES_REQUEST,
-  GET_VIDEOS_REQUEST,
-  GET_AUDIO_REQUEST,
+  // GET_ARTICLES_REQUEST,
+  // GET_VIDEOS_REQUEST,
+  // GET_AUDIO_REQUEST,
+  // GET_AUDIO_FAILED,
+  // GET_VIDEOS_FAILED,
+  // GET_ARTICLES_FAILED,
 } from "./types";
-import { articleAPI, videoAPI, audioAPI } from "helpers/api";
+// import { articleAPI, videoAPI, audioAPI } from "helpers/api";
 
 import { ARTICLES, VIDEOS, AUDIO } from "helpers/constants";
-import { parseVideoResponse, parseAudioResponse } from "helpers/functions";
+// import { parseVideoResponse, parseAudioResponse } from "helpers/functions";
 
 export const getArticles = (keyword, params) => {
   // return async (dispatch, getState) => {
@@ -27,7 +30,7 @@ export const getArticles = (keyword, params) => {
   //         payload: res.data.data,
   //       })
   //     )
-  //     .catch((err) => console.log(err));
+  // .catch((err) => dispatch({type:GET_ARTICLES_FAILED}));
   // };
   return (dispatch) => {
     dispatch({
@@ -39,30 +42,30 @@ export const getArticles = (keyword, params) => {
 };
 
 export const getVideos = (keyword, params) => {
-  return async (dispatch, getState) => {
-    if (getState()[keyword].videos.length !== 0) {
-      //Check if redux state already exists
-      return;
-    }
-    dispatch({ type: GET_VIDEOS_REQUEST });
-    videoAPI
-      .get("", { params: { ...params, q: keyword } })
-      .then((res) =>
-        dispatch({
-          type: GET_VIDEOS,
-          name: keyword,
-          payload: parseVideoResponse(res.data.items),
-        })
-      )
-      .catch((err) => console.log(err));
-  };
-  // return (dispatch) => {
-  //   dispatch({
-  //     type: GET_VIDEOS,
-  //     name: keyword,
-  //     payload: [],
-  //   });
+  // return async (dispatch, getState) => {
+  //   if (getState()[keyword].videos.length !== 0) {
+  //     //Check if redux state already exists
+  //     return;
+  //   }
+  //   dispatch({ type: GET_VIDEOS_REQUEST });
+  //   videoAPI
+  //     .get("", { params: { ...params, q: keyword } })
+  //     .then((res) =>
+  //       dispatch({
+  //         type: GET_VIDEOS,
+  //         name: keyword,
+  //         payload: parseVideoResponse(res.data.items),
+  //       })
+  //     )
+  //     .catch((err) => dispatch({ type: GET_VIDEOS_FAILED }));
   // };
+  return (dispatch) => {
+    dispatch({
+      type: GET_VIDEOS,
+      name: keyword,
+      payload: [],
+    });
+  };
 };
 
 export const getAudio = (keyword, params) => {
@@ -81,7 +84,7 @@ export const getAudio = (keyword, params) => {
   //         payload: parseAudioResponse(res.data.results),
   //       })
   //     )
-  //     .catch((err) => console.log(err));
+  //     .catch((err) => dispatch({ type: GET_AUDIO_FAILED }));
   // };
   return (dispatch) => {
     dispatch({

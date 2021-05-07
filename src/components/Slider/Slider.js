@@ -6,6 +6,7 @@ import SliderCard from "./SliderCard";
 import "./Slider.scss";
 
 import SliderLoader from "./SliderLoader";
+import ErrorMessage from "components/ErrorMessage/ErrorMessage";
 import { settings } from "./SliderSettings";
 import { fetchSliderItems } from "actions/actions";
 import "slick-carousel/slick/slick.css";
@@ -44,12 +45,14 @@ class Slider extends React.Component {
   };
 
   render() {
-    const { items, type, isLoading } = this.props;
+    const { items, type, isLoading, error } = this.props;
     return (
       <div>
         <h5 className="slider-header">{type}</h5>
         {isLoading ? (
           <SliderLoader />
+        ) : error ? (
+          <ErrorMessage />
         ) : (
           <ReactSlider {...settings}>
             {items.map((item, index) => (
@@ -68,6 +71,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     items: topic[type],
     isLoading: state.loading[`${type}Loading`],
+    error: state.error[`${type}Error`],
   };
 };
 

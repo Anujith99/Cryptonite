@@ -39,6 +39,10 @@
 
     &:hover {
       background: rgba($color: $white, $alpha: 0.3);
+
+      .dropdown-link {
+        color: $primary;
+      }
     }
   }
 

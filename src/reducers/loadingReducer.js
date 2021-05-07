@@ -6,6 +6,9 @@ import {
   GET_ARTICLES_REQUEST,
   GET_AUDIO_REQUEST,
   GET_VIDEOS_REQUEST,
+  GET_AUDIO_FAILED,
+  GET_VIDEOS_FAILED,
+  GET_ARTICLES_FAILED,
 } from "actions/types";
 import { produce } from "immer";
 
@@ -22,18 +25,21 @@ export default function (state = initialState, action) {
         draftState.articlesLoading = true;
         break;
       case GET_ARTICLES:
+      case GET_ARTICLES_FAILED:
         draftState.articlesLoading = false;
         break;
       case GET_VIDEOS_REQUEST:
         draftState.videosLoading = true;
         break;
       case GET_VIDEOS:
+      case GET_VIDEOS_FAILED:
         draftState.videosLoading = false;
         break;
       case GET_AUDIO_REQUEST:
         draftState.audioLoading = true;
         break;
       case GET_AUDIO:
+      case GET_AUDIO_FAILED:
         draftState.audioLoading = false;
         break;
       default:
