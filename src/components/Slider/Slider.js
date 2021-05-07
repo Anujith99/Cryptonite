@@ -5,6 +5,7 @@ import SliderCard from "./SliderCard";
 
 import "./Slider.scss";
 
+import SliderLoader from "./SliderLoader";
 import { settings } from "./SliderSettings";
 import { fetchSliderItems } from "actions/actions";
 import "slick-carousel/slick/slick.css";
@@ -48,7 +49,7 @@ class Slider extends React.Component {
       <div>
         <h5 className="slider-header">{type}</h5>
         {isLoading ? (
-          <h4>Loading...</h4>
+          <SliderLoader />
         ) : (
           <ReactSlider {...settings}>
             {items.map((item, index) => (

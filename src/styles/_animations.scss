@@ -45,3 +45,10 @@
     transform: rotate(180deg);
   }
 }
+
+//Animation for slider loading skeleton
+@keyframes loading {
+  to {
+    transform: translateX(100%);
+  }
+}

@@ -39,57 +39,57 @@ export const getArticles = (keyword, params) => {
 };
 
 export const getVideos = (keyword, params) => {
-  // return async (dispatch, getState) => {
-  //   if (getState()[keyword].videos.length !== 0) {
-  //     //Check if redux state already exists
-  //     return;
-  //   }
-  //   dispatch({ type: GET_VIDEOS_REQUEST });
-  //   videoAPI
-  //     .get("", { params: { ...params, q: keyword } })
-  //     .then((res) =>
-  //       dispatch({
-  //         type: GET_VIDEOS,
-  //         name: keyword,
-  //         payload: parseVideoResponse(res.data.items),
-  //       })
-  //     )
-  //     .catch((err) => console.log(err));
-  // };
-  return (dispatch) => {
-    dispatch({
-      type: GET_VIDEOS,
-      name: keyword,
-      payload: [],
-    });
-  };
-};
-
-export const getAudio = (keyword, params) => {
   return async (dispatch, getState) => {
-    if (getState()[keyword].audio.length !== 0) {
+    if (getState()[keyword].videos.length !== 0) {
       //Check if redux state already exists
       return;
     }
-    dispatch({ type: GET_AUDIO_REQUEST });
-    audioAPI
-      .get("", { params })
+    dispatch({ type: GET_VIDEOS_REQUEST });
+    videoAPI
+      .get("", { params: { ...params, q: keyword } })
       .then((res) =>
         dispatch({
-          type: GET_AUDIO,
+          type: GET_VIDEOS,
           name: keyword,
-          payload: parseAudioResponse(res.data.results),
+          payload: parseVideoResponse(res.data.items),
         })
       )
       .catch((err) => console.log(err));
   };
   // return (dispatch) => {
   //   dispatch({
-  //     type: GET_AUDIO,
+  //     type: GET_VIDEOS,
   //     name: keyword,
   //     payload: [],
   //   });
   // };
+};
+
+export const getAudio = (keyword, params) => {
+  // return async (dispatch, getState) => {
+  //   if (getState()[keyword].audio.length !== 0) {
+  //     //Check if redux state already exists
+  //     return;
+  //   }
+  //   dispatch({ type: GET_AUDIO_REQUEST });
+  //   audioAPI
+  //     .get("", { params })
+  //     .then((res) =>
+  //       dispatch({
+  //         type: GET_AUDIO,
+  //         name: keyword,
+  //         payload: parseAudioResponse(res.data.results),
+  //       })
+  //     )
+  //     .catch((err) => console.log(err));
+  // };
+  return (dispatch) => {
+    dispatch({
+      type: GET_AUDIO,
+      name: keyword,
+      payload: [],
+    });
+  };
 };
 
 export const fetchSliderItems = (type, keyword, params) => {

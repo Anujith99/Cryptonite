@@ -1,5 +1,6 @@
 @import "styles/_mixins.scss";
 @import "styles/_variables.scss";
+@import "styles/_animations.scss";
 
 .slider-header {
   font-weight: 600;
@@ -161,4 +162,47 @@
 
 .slick-list {
   padding-left: 0 !important;
+}
+
+//Slider Loader
+.slider-loader {
+  display: flex;
+}
+.slider-loader-box {
+  @extend .slider-card;
+  position: relative;
+  width: 33%;
+  height: 300px;
+  @include for-size(990px) {
+    & {
+      width: 50%;
+    }
+    &:last-child {
+      display: none;
+    }
+  }
+  @include for-size(600px) {
+    & {
+      width: 100%;
+    }
+    &:nth-last-child(2) {
+      display: none;
+    }
+  }
+}
+
+.slider-loader-box::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    to right,
+    transparent 70%,
+    rgba(255, 255, 255, 0.3) 30%
+  );
+  filter: blur(3px);
+  animation: loading 1s infinite;
 }
