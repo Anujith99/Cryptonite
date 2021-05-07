@@ -1,8 +1,8 @@
 import { GET_ARTICLES, GET_VIDEOS, GET_AUDIO } from "./types";
-import { articleAPI, videoAPI, audioAPI } from "helpers/api";
+// import { articleAPI, videoAPI, audioAPI } from "helpers/api";
 
 import { ARTICLES, VIDEOS, AUDIO } from "helpers/constants";
-import { parseVideoResponse, parseAudioResponse } from "helpers/functions";
+// import { parseVideoResponse, parseAudioResponse } from "helpers/functions";
 
 export const getArticles = (keyword, params) => {
   // return async (dispatch) => {
@@ -49,25 +49,25 @@ export const getVideos = (keyword, params) => {
 };
 
 export const getAudio = (keyword, params) => {
-  return async (dispatch) => {
-    audioAPI
-      .get("", { params })
-      .then((res) =>
-        dispatch({
-          type: GET_AUDIO,
-          name: keyword,
-          payload: parseAudioResponse(res.data.results),
-        })
-      )
-      .catch((err) => console.log(err));
-  };
-  // return (dispatch) => {
-  //   dispatch({
-  //     type: GET_AUDIO,
-  //     name: keyword,
-  //     payload: [],
-  //   });
+  // return async (dispatch) => {
+  //   audioAPI
+  //     .get("", { params })
+  //     .then((res) =>
+  //       dispatch({
+  //         type: GET_AUDIO,
+  //         name: keyword,
+  //         payload: parseAudioResponse(res.data.results),
+  //       })
+  //     )
+  //     .catch((err) => console.log(err));
   // };
+  return (dispatch) => {
+    dispatch({
+      type: GET_AUDIO,
+      name: keyword,
+      payload: [],
+    });
+  };
 };
 
 export const fetchSliderItems = (type, keyword, params) => {

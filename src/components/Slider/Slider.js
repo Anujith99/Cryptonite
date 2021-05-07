@@ -29,11 +29,13 @@ class Slider extends React.Component {
     return (
       <div>
         <h5 className="slider-header">{type}</h5>
-        <ReactSlider {...settings}>
-          {items.map((item, index) => (
-            <SliderCard key={index} item={item} type={type} />
-          ))}
-        </ReactSlider>
+        {!items.length ? null : (
+          <ReactSlider {...settings}>
+            {items.map((item, index) => (
+              <SliderCard key={index} item={item} type={type} />
+            ))}
+          </ReactSlider>
+        )}
       </div>
     );
   }
