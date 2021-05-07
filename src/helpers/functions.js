@@ -10,3 +10,13 @@ export const parseVideoResponse = (response) => {
 
   return parsedResponse;
 };
+
+export const parseAudioResponse = (response) => {
+  let parsedResponse = response.map((audio) => ({
+    url: audio.collectionViewUrl,
+    title: audio.collectionName,
+    image: audio.artworkUrl600,
+  }));
+
+  return parsedResponse;
+};
