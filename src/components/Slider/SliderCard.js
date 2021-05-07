@@ -1,7 +1,7 @@
 import React from "react";
 import dayjs from "dayjs";
 
-import { VIDEOS } from "helpers/constants";
+import { VIDEOS, AUDIO } from "helpers/constants";
 
 var relativeTime = require("dayjs/plugin/relativeTime");
 dayjs.extend(relativeTime);
@@ -13,6 +13,17 @@ class SliderCard extends React.Component {
     let formattedDate = dayjs(date).fromNow();
 
     return formattedDate;
+  };
+
+  renderSliderIcon = (type) => {
+    switch (type) {
+      case VIDEOS:
+        return <i className="fas fa-play slider-icon"></i>;
+      case AUDIO:
+        return <i className="fas fa-headphones slider-icon"></i>;
+      default:
+        return null;
+    }
   };
 
   render() {
@@ -27,7 +38,7 @@ class SliderCard extends React.Component {
             src={item.image}
             alt={item.title}
           />
-          {type === VIDEOS ? <i className="fas fa-play"></i> : null}
+          {this.renderSliderIcon(type)}
         </div>
         <div className="slider-text">
           <div className="slider-text-header">
