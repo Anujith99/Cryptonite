@@ -25,16 +25,6 @@ export const getArticles = (keyword, params) => {
       return;
     }
     dispatch({ type: GET_ARTICLES_REQUEST });
-    // articleAPI
-    //   .get("", { params })
-    //   .then((res) =>
-    //     dispatch({
-    //       type: GET_ARTICLES,
-    //       name: keyword,
-    //       payload: res.data.data,
-    //     })
-    //   )
-    //   .catch((err) => dispatch({ type: GET_ARTICLES_FAILED }));
     articleAPI
       .get(`search?q=${keyword}`, { params })
       .then((res) =>
