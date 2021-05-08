@@ -1,16 +1,13 @@
 import React from "react";
-
-const LoaderBox = () => {
-  return <div className="slider-loader-box"></div>;
-};
+import { LoaderBox } from "components/LoaderBox/LoaderBox";
 
 class SliderLoader extends React.Component {
   render() {
     return (
       <div className="slider-loader">
-        <LoaderBox />
-        <LoaderBox />
-        <LoaderBox />
+        {[...Array(3)].map((item, index) => (
+          <LoaderBox key={index} customClass="slider-loader-box" />
+        ))}
       </div>
     );
   }
