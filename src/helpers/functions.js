@@ -1,3 +1,16 @@
+export const parseArticlesResponse = (response) => {
+  let parsedResponse = response.map((article) => ({
+    title: article.title,
+    description: article.description,
+    url: article.url,
+    image: article.image,
+    publishedAt: article.publishedAt,
+    source: article.source.name,
+  }));
+
+  return parsedResponse;
+};
+
 export const parseVideoResponse = (response) => {
   let parsedResponse = response.map((video) => ({
     id: video.id.videoId,
