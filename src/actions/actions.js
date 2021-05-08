@@ -12,7 +12,11 @@ import {
 import { articleAPI, videoAPI, audioAPI } from "helpers/api";
 
 import { ARTICLES, VIDEOS, AUDIO } from "helpers/constants";
-import { parseVideoResponse, parseAudioResponse } from "helpers/functions";
+import {
+  parseVideoResponse,
+  parseAudioResponse,
+  parseArticlesResponse,
+} from "helpers/functions";
 
 export const getArticles = (keyword, params) => {
   return async (dispatch, getState) => {
@@ -21,13 +25,23 @@ export const getArticles = (keyword, params) => {
       return;
     }
     dispatch({ type: GET_ARTICLES_REQUEST });
+    // articleAPI
+    //   .get("", { params })
+    //   .then((res) =>
+    //     dispatch({
+    //       type: GET_ARTICLES,
+    //       name: keyword,
+    //       payload: res.data.data,
+    //     })
+    //   )
+    //   .catch((err) => dispatch({ type: GET_ARTICLES_FAILED }));
     articleAPI
-      .get("", { params })
+      .get(`search?q=${keyword}`, { params })
       .then((res) =>
         dispatch({
           type: GET_ARTICLES,
           name: keyword,
-          payload: res.data.data,
+          payload: parseArticlesResponse(res.data.articles),
         })
       )
       .catch((err) => dispatch({ type: GET_ARTICLES_FAILED }));

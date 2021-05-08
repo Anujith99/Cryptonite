@@ -21,11 +21,10 @@ class Slider extends React.Component {
   }
 
   chooseParams = () => {
-    const { type, category } = this.props;
+    const { type } = this.props;
     switch (type) {
       case AUDIO:
         return {
-          term: category,
           limit: 5,
         };
       case VIDEOS:
@@ -35,9 +34,14 @@ class Slider extends React.Component {
           videoEmbeddable: true,
         };
       case ARTICLES:
+        // return {
+        //   limit: 5,
+        //   keywords: category,
+        // };
         return {
-          limit: 5,
-          keywords: category,
+          token: process.env.REACT_APP_ARTICLES_API_KEY,
+          lang: "en",
+          max: 5,
         };
       default:
         return {};
