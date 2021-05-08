@@ -25,6 +25,7 @@ class Slider extends React.Component {
     switch (type) {
       case AUDIO:
         return {
+          lang: "en_us",
           limit: 5,
         };
       case VIDEOS:
@@ -34,10 +35,6 @@ class Slider extends React.Component {
           videoEmbeddable: true,
         };
       case ARTICLES:
-        // return {
-        //   limit: 5,
-        //   keywords: category,
-        // };
         return {
           token: process.env.REACT_APP_ARTICLES_API_KEY,
           lang: "en",
