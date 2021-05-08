@@ -1,5 +1,6 @@
 @import "styles/_mixins.scss";
 @import "styles/_variables.scss";
+@import "styles/_animations.scss";
 
 .slider-header {
   font-weight: 600;
@@ -161,4 +162,8 @@
 
 .slick-list {
   padding-left: 0 !important;
+}
+
+.slider-loader {
+  display: flex;
 }

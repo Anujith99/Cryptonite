@@ -1,0 +1,31 @@
+@import "styles/_variables.scss";
+@import "styles/_mixins.scss";
+
+.error-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 4em;
+
+  @include for-size($mobile) {
+    & {
+      margin-top: 2em;
+    }
+  }
+
+  .fa-frown {
+    transform: scale(4);
+
+    @include for-size($mobile) {
+      & {
+        transform: scale(3);
+      }
+    }
+  }
+
+  .error-message {
+    text-align: center;
+    width: 80%;
+    margin-top: 2em;
+  }
+}
