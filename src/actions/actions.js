@@ -76,7 +76,7 @@ export const getAudio = (keyword, params) => {
     }
     dispatch({ type: GET_AUDIO_REQUEST });
     audioAPI
-      .get("", { params })
+      .get(`search?term=${keyword}`, { params })
       .then((res) =>
         dispatch({
           type: GET_AUDIO,
