@@ -25,7 +25,7 @@ class Slider extends React.Component {
     switch (type) {
       case AUDIO:
         return {
-          // term: category,
+          term: category,
           limit: 5,
         };
       case VIDEOS:

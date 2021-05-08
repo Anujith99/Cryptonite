@@ -15,30 +15,30 @@ import { ARTICLES, VIDEOS, AUDIO } from "helpers/constants";
 import { parseVideoResponse, parseAudioResponse } from "helpers/functions";
 
 export const getArticles = (keyword, params) => {
-  // return async (dispatch, getState) => {
-  //   if (getState()[keyword].articles.length !== 0) {
-  //     //Check if redux state already exists
-  //     return;
-  //   }
-  //   dispatch({ type: GET_ARTICLES_REQUEST });
-  //   articleAPI
-  //     .get("", { params })
-  //     .then((res) =>
-  //       dispatch({
-  //         type: GET_ARTICLES,
-  //         name: keyword,
-  //         payload: res.data.data,
-  //       })
-  //     )
-  //     .catch((err) => dispatch({ type: GET_ARTICLES_FAILED }));
-  // };
-  return (dispatch) => {
-    dispatch({
-      type: GET_ARTICLES,
-      name: keyword,
-      payload: [],
-    });
+  return async (dispatch, getState) => {
+    if (getState()[keyword].articles.length !== 0) {
+      //Check if redux state already exists
+      return;
+    }
+    dispatch({ type: GET_ARTICLES_REQUEST });
+    articleAPI
+      .get("", { params })
+      .then((res) =>
+        dispatch({
+          type: GET_ARTICLES,
+          name: keyword,
+          payload: res.data.data,
+        })
+      )
+      .catch((err) => dispatch({ type: GET_ARTICLES_FAILED }));
   };
+  // return (dispatch) => {
+  //   dispatch({
+  //     type: GET_ARTICLES,
+  //     name: keyword,
+  //     payload: [],
+  //   });
+  // };
 };
 
 export const getVideos = (keyword, params) => {
