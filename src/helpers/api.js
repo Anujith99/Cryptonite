@@ -23,7 +23,7 @@ export const videoAPI = axios.create({
 });
 
 export const audioAPI = axios.create({
-  baseURL: "https://itunes.apple.com/search?",
+  baseURL: "https://itunes.apple.com",
   params: {
     media: "podcast",
   },
