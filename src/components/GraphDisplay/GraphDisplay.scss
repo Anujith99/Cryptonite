@@ -1,0 +1,19 @@
+@import "styles/_mixins.scss";
+@import "styles/_main.scss";
+@import "styles/_variables.scss";
+
+.graph-header {
+  @extend .section-header;
+  font-size: 54px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+
+  @include for-size($tablet) {
+    font-size: 48px;
+  }
+
+  @include for-size($mobile) {
+    font-size: 40px;
+  }
+}
