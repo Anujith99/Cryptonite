@@ -19,3 +19,7 @@ export const audioAPI = axios.create({
     media: "podcast",
   },
 });
+
+export const cryptoAPI = axios.create({
+  baseURL: "https://api.coingecko.com/api/v3",
+});

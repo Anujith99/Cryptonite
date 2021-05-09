@@ -11,7 +11,13 @@ class App extends React.Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/:crypto" component={CryptoPage} />
+          <Route
+            exact
+            path="/:crypto"
+            render={(props) => (
+              <CryptoPage key={props.match.params.crypto} {...props} />
+            )}
+          />
         </Switch>
       </div>
     );
