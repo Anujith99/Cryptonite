@@ -8,7 +8,7 @@ import "./Slider.scss";
 import SliderLoader from "./SliderLoader";
 import ErrorMessage from "components/ErrorMessage/ErrorMessage";
 import { settings } from "./SliderSettings";
-import { fetchSliderItems } from "actions/actions";
+import { fetchSliderItems } from "actions/newsActions";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AUDIO, VIDEOS, ARTICLES } from "helpers/constants";
@@ -68,7 +68,7 @@ class Slider extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   const { category, type } = ownProps;
-  const topic = state[category];
+  const topic = state[category].news;
   return {
     items: topic[type],
     isLoading: state.loading[`${type}Loading`],

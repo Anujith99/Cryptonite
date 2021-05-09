@@ -20,12 +20,12 @@ import {
 
 export const getArticles = (keyword, params) => {
   return async (dispatch, getState) => {
-    if (getState()[keyword].articles.length !== 0) {
+    if (getState()[keyword].news.articles.length !== 0) {
       //Check if redux state already exists
       return;
     }
     dispatch({ type: GET_ARTICLES_REQUEST });
-    articleAPI
+    await articleAPI
       .get(`search?q=${keyword}`, { params })
       .then((res) =>
         dispatch({
@@ -47,12 +47,12 @@ export const getArticles = (keyword, params) => {
 
 export const getVideos = (keyword, params) => {
   return async (dispatch, getState) => {
-    if (getState()[keyword].videos.length !== 0) {
+    if (getState()[keyword].news.videos.length !== 0) {
       //Check if redux state already exists
       return;
     }
     dispatch({ type: GET_VIDEOS_REQUEST });
-    videoAPI
+    await videoAPI
       .get("", { params: { ...params, q: keyword } })
       .then((res) =>
         dispatch({
@@ -74,12 +74,12 @@ export const getVideos = (keyword, params) => {
 
 export const getAudio = (keyword, params) => {
   return async (dispatch, getState) => {
-    if (getState()[keyword].audio.length !== 0) {
+    if (getState()[keyword].news.audio.length !== 0) {
       //Check if redux state already exists
       return;
     }
     dispatch({ type: GET_AUDIO_REQUEST });
-    audioAPI
+    await audioAPI
       .get(`search?term=${keyword}`, { params })
       .then((res) =>
         dispatch({

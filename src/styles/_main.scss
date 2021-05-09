@@ -1,6 +1,10 @@
 @import "_variables.scss";
 @import "_mixins.scss";
 
+html {
+  min-height: 100%;
+}
+
 body {
   height: 100%;
   margin: 0;
