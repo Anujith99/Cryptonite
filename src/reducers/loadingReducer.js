@@ -12,6 +12,9 @@ import {
   GET_CRYPTO_DATA,
   GET_CRYPTO_DATA_REQUEST,
   GET_CRYPTO_DATA_FAILED,
+  GET_CRYPTO_STATS,
+  GET_CRYPTO_STATS_REQUEST,
+  GET_CRYPTO_STATS_FAILED,
 } from "actions/types";
 import { produce } from "immer";
 
@@ -20,6 +23,7 @@ const initialState = {
   videosLoading: false,
   audioLoading: false,
   cryptoDataLoading: false,
+  cryptoStatsLoading: false,
 };
 
 export default function (state = initialState, action) {
@@ -52,6 +56,13 @@ export default function (state = initialState, action) {
       case GET_CRYPTO_DATA:
       case GET_CRYPTO_DATA_FAILED:
         draftState.cryptoDataLoading = false;
+        break;
+      case GET_CRYPTO_STATS_REQUEST:
+        draftState.cryptoStatsLoading = true;
+        break;
+      case GET_CRYPTO_STATS:
+      case GET_CRYPTO_STATS_FAILED:
+        draftState.cryptoStatsLoading = false;
         break;
       default:
         break;

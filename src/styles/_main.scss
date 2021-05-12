@@ -39,6 +39,19 @@ body {
   }
 }
 
+.section-less-padding {
+  @extend .section;
+  padding: 5vh 60px;
+
+  @include for-size($tablet) {
+    padding: 3vh 40px;
+  }
+
+  @include for-size($mobile) {
+    padding: 2vh 30px;
+  }
+}
+
 .section-header {
   font-weight: 500;
   font-size: 40px;

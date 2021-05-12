@@ -27,10 +27,10 @@ const PriceLabel = (props) => {
   };
   return (
     <text
-      x={x}
-      y={index === 0 ? y - 15 : y + 15}
+      x={index === 0 ? x - 5 : x + 5}
+      y={index === 0 ? y - 12 : y + 24}
       fill={stroke}
-      fontSize={index !== 6 ? 14 : 22}
+      fontSize={index !== 6 ? 16 : 28}
       textAnchor={index === 0 ? "start" : "end"}
       fontWeight="bold"
     >
@@ -52,7 +52,7 @@ class GraphDisplay extends React.Component {
   render() {
     const { data, loading, error } = this.props;
     return (
-      <div className="section">
+      <div className="section-less-padding">
         <div className="container">
           <h3 className="graph-header">{this.props.crypto}</h3>
           {loading ? (

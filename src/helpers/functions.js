@@ -43,3 +43,12 @@ export const parseCryptoData = (response) => {
 
   return parsedResponse;
 };
+
+export const isObjectEmpty = (obj) => {
+  if (obj) {
+    let keys = Object.keys(obj);
+    if (keys.length === 0) return true;
+  }
+
+  return false;
+};
