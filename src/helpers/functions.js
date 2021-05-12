@@ -33,3 +33,13 @@ export const parseAudioResponse = (response) => {
 
   return parsedResponse;
 };
+
+export const parseCryptoData = (response) => {
+  //We do not need the last element of api response
+  let parsedResponse = response.slice(0, -1).map((value) => ({
+    x: new Date(value[0]),
+    y: value[1],
+  }));
+
+  return parsedResponse;
+};

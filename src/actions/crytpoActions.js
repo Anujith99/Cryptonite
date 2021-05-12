@@ -8,6 +8,7 @@ import {
 } from "./types";
 
 import { cryptoAPI } from "helpers/api";
+import { parseCryptoData } from "helpers/functions";
 
 export const getCryptoData = (cryptoType) => {
   const params = {
@@ -17,13 +18,16 @@ export const getCryptoData = (cryptoType) => {
   };
 
   return async (dispatch, getState) => {
+    if (getState()[cryptoType].statistics.historicalData.length !== 0) {
+      return;
+    }
     dispatch({ type: GET_CRYPTO_DATA_REQUEST });
     await cryptoAPI
       .get(`coins/${cryptoType}/market_chart`, { params })
       .then((res) =>
         dispatch({
           type: GET_CRYPTO_DATA,
-          payload: res.data.prices,
+          payload: parseCryptoData(res.data.prices),
           name: cryptoType,
         })
       )

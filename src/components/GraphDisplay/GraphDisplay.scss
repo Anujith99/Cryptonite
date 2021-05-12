@@ -17,3 +17,20 @@
     font-size: 40px;
   }
 }
+
+.graph-container {
+  @include bg-glass;
+  @include set-border-radius(20px);
+  width: 100%;
+  height: 400px;
+  padding: 30px 30px;
+
+  @include for-size($tablet) {
+    padding: 25px 25px;
+  }
+
+  @include for-size($mobile) {
+    padding: 20px 20px;
+    height: 350px;
+  }
+}

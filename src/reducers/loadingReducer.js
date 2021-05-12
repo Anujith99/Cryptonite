@@ -9,6 +9,9 @@ import {
   GET_AUDIO_FAILED,
   GET_VIDEOS_FAILED,
   GET_ARTICLES_FAILED,
+  GET_CRYPTO_DATA,
+  GET_CRYPTO_DATA_REQUEST,
+  GET_CRYPTO_DATA_FAILED,
 } from "actions/types";
 import { produce } from "immer";
 
@@ -16,6 +19,7 @@ const initialState = {
   articlesLoading: false,
   videosLoading: false,
   audioLoading: false,
+  cryptoDataLoading: false,
 };
 
 export default function (state = initialState, action) {
@@ -41,6 +45,13 @@ export default function (state = initialState, action) {
       case GET_AUDIO:
       case GET_AUDIO_FAILED:
         draftState.audioLoading = false;
+        break;
+      case GET_CRYPTO_DATA_REQUEST:
+        draftState.cryptoDataLoading = true;
+        break;
+      case GET_CRYPTO_DATA:
+      case GET_CRYPTO_DATA_FAILED:
+        draftState.cryptoDataLoading = false;
         break;
       default:
         break;
