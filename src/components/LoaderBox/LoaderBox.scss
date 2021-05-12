@@ -45,3 +45,12 @@
     }
   }
 }
+
+.graph-loader-box {
+  width: 100%;
+  height: 400px;
+
+  @include for-size($mobile) {
+    height: 350px;
+  }
+}

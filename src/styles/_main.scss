@@ -1,6 +1,10 @@
 @import "_variables.scss";
 @import "_mixins.scss";
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   min-height: 100%;
 }
@@ -32,6 +36,19 @@ body {
 
   @include for-size($mobile) {
     padding: 5vh 30px;
+  }
+}
+
+.section-less-padding {
+  @extend .section;
+  padding: 5vh 60px;
+
+  @include for-size($tablet) {
+    padding: 3vh 40px;
+  }
+
+  @include for-size($mobile) {
+    padding: 2vh 30px;
   }
 }
 

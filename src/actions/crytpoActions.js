@@ -8,6 +8,7 @@ import {
 } from "./types";
 
 import { cryptoAPI } from "helpers/api";
+import { isObjectEmpty, parseCryptoData } from "helpers/functions";
 
 export const getCryptoData = (cryptoType) => {
   const params = {
@@ -17,13 +18,16 @@ export const getCryptoData = (cryptoType) => {
   };
 
   return async (dispatch, getState) => {
+    if (getState()[cryptoType].statistics.historicalData.length !== 0) {
+      return;
+    }
     dispatch({ type: GET_CRYPTO_DATA_REQUEST });
     await cryptoAPI
       .get(`coins/${cryptoType}/market_chart`, { params })
       .then((res) =>
         dispatch({
           type: GET_CRYPTO_DATA,
-          payload: res.data.prices,
+          payload: parseCryptoData(res.data.prices),
           name: cryptoType,
         })
       )
@@ -35,11 +39,15 @@ export const getCryptoStats = (cryptoType) => {
   const params = {
     ids: cryptoType,
     vs_currencies: "usd",
+    include_24hr_vol: true,
     include_market_cap: true,
     include_24hr_change: true,
   };
 
   return async (dispatch, getState) => {
+    if (!isObjectEmpty(getState()[cryptoType].statistics.coinStatistics)) {
+      return;
+    }
     dispatch({ type: GET_CRYPTO_STATS_REQUEST });
     await cryptoAPI
       .get(`simple/price`, { params })

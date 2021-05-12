@@ -1,53 +1,19 @@
 @import "styles/_mixins.scss";
 @import "styles/_variables.scss";
 
-$large-tablet: 900px;
-$small-tablet: 650px;
-
-.crypto-cards {
-  display: flex;
-  justify-content: center;
-  margin-left: -10px;
-  margin-right: -10px;
-  @include for-size($large-tablet) {
-    flex-wrap: wrap;
-    margin-top: -15px;
-  }
-  @include for-size($small-tablet) {
-    flex-direction: column;
-    align-items: center;
-  }
+.crypto-card-link {
+  text-decoration: none;
 }
 
 .crypto-card {
-  @include bg-glass;
-  @include set-border-radius(20px);
-  width: calc(100% / 3);
   text-align: center;
-  padding: 20px 0px 30px 0px;
-  margin: 0 10px;
-  cursor: pointer;
-
-  @include for-size($large-tablet) {
-    width: 40%;
-    margin-top: 15px;
-  }
-
-  @include for-size($small-tablet) {
-    margin-left: 0;
-    margin-right: 0;
-    width: 60%;
-  }
-
-  @include for-size($mobile) {
-    width: 100%;
-  }
 
   .crypto-name {
     font-weight: 500;
     font-size: 36px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    color: $white;
 
     @include for-size($small-tablet) {
       font-size: 32px;

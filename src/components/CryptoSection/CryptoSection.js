@@ -1,4 +1,5 @@
 import React from "react";
+import CardsContainer, { Card } from "components/CardsContainer/CardsContainer";
 import CryptoCard from "./CryptoCard";
 import "./CryptoCard.scss";
 
@@ -14,11 +15,13 @@ class CryptoSection extends React.Component {
             With interactive graphs and latest statistics, you can be the crypto
             guru of your friend circle.
           </h6>
-          <div className="crypto-cards">
+          <CardsContainer>
             {CRYPTO_TYPES.map((crypto, index) => (
-              <CryptoCard key={index} crypto={crypto} />
+              <Card key={index}>
+                <CryptoCard crypto={crypto} />
+              </Card>
             ))}
-          </div>
+          </CardsContainer>
         </div>
       </section>
     );
