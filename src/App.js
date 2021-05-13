@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Navbar from "components/Navbar/Navbar";
 import CryptoPage from "components/CryptoPage";
 import HomePage from "components/HomePage";
+import Footer from "components/Footer/Footer";
 
 class App extends React.Component {
   render() {
@@ -19,6 +20,7 @@ class App extends React.Component {
             )}
           />
         </Switch>
+        <Footer />
       </div>
     );
   }

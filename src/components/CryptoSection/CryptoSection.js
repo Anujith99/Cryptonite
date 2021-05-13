@@ -8,7 +8,7 @@ import { CRYPTO_TYPES } from "helpers/constants";
 class CryptoSection extends React.Component {
   render() {
     return (
-      <section className="section">
+      <section id="cryptocurrencies" className="section">
         <div className="container">
           <h3 className="section-header">Popular Cryptocurrencies</h3>
           <h6 className="section-paragraph">
