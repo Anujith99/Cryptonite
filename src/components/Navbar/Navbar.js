@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { ReactComponent as Logo } from "resources/cryptoniteLogo.svg";
 
 import Dropdown from "./Dropdown";
@@ -56,14 +57,24 @@ class Navbar extends React.Component {
           </div>
           <ul className={this.state.menuOpen ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <Link to="/" className="nav-link" onClick={this.closeMobileMenu}>
+              <HashLink
+                smooth
+                to="/#faqs"
+                className="nav-link"
+                onClick={this.closeMobileMenu}
+              >
                 FAQs
-              </Link>
+              </HashLink>
             </li>
             <li className="nav-item">
-              <Link to="/" className="nav-link" onClick={this.closeMobileMenu}>
+              <HashLink
+                smooth
+                to="/#news"
+                className="nav-link"
+                onClick={this.closeMobileMenu}
+              >
                 News
-              </Link>
+              </HashLink>
             </li>
             <li
               className="nav-item"

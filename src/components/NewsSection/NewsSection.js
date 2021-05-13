@@ -6,7 +6,7 @@ import { NEWS_TYPES } from "helpers/constants";
 class NewsSection extends React.Component {
   render() {
     return (
-      <section className="section">
+      <section id="news" className="section">
         <div className="container">
           {this.props.showHeader ? (
             <>
