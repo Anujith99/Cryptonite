@@ -27,6 +27,7 @@ class Slider extends React.Component {
         return {
           lang: "en_us",
           limit: 5,
+          entity: "podcast",
         };
       case VIDEOS:
         return {
