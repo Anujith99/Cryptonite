@@ -44,7 +44,7 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="navbar-section">
         <nav className="navbar container">
           <Link to="/" className="navbar-logo" onClick={this.closeMobileMenu}>
             <Logo />
@@ -84,7 +84,7 @@ class Navbar extends React.Component {
             </li>
           </ul>
         </nav>
-      </>
+      </div>
     );
   }
 }

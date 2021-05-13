@@ -8,12 +8,16 @@ class NewsSection extends React.Component {
     return (
       <section className="section">
         <div className="container">
-          <h3 className="section-header">
-            Latest Articles, Videos and Podcasts
-          </h3>
-          <h6 className="section-paragraph">
-            Stay up to date with the happenings in the cryptocurrency world.
-          </h6>
+          {this.props.showHeader ? (
+            <>
+              <h3 className="section-header">
+                Latest Articles, Videos and Podcasts
+              </h3>
+              <h6 className="section-paragraph">
+                Stay up to date with the happenings in the cryptocurrency world.
+              </h6>
+            </>
+          ) : null}
           {NEWS_TYPES.map((type, index) => (
             <Slider key={index} type={type} category={this.props.category} />
           ))}

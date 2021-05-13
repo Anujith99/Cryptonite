@@ -11,7 +11,7 @@ class HomePage extends React.Component {
       <div>
         <HeroSection />
         <FAQs />
-        <NewsSection category={CRYPTOCURRENCY} />
+        <NewsSection category={CRYPTOCURRENCY} showHeader={true} />
         <CryptoSection />
       </div>
     );

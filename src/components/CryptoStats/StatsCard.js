@@ -33,7 +33,11 @@ class StatsCard extends React.Component {
       <div className="stats-card">
         <h4 className="stats-card-header">{title}</h4>
         <div className="stats-card-text">
-          <h3 className="stats-card-value">{`$ ${this.formatValue(value)}`}</h3>
+          <h3 className="stats-card-value">
+            {showArrow
+              ? `${this.formatValue(value)}%`
+              : `$${this.formatValue(value)}`}
+          </h3>
           {showArrow ? this.renderArrow(value) : ""}
         </div>
       </div>

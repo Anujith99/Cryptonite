@@ -1,14 +1,7 @@
 @import "styles/_variables.scss";
 @import "styles/_mixins.scss";
 
-.navbar {
-  height: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 24px;
-  margin-top: 60px !important;
-
+.navbar-section {
   padding-left: 60px;
   padding-right: 60px;
 
@@ -21,6 +14,15 @@
     padding-left: 30px;
     padding-right: 30px;
   }
+}
+
+.navbar {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  margin-top: 60px !important;
 
   .navbar-logo {
     cursor: pointer;
