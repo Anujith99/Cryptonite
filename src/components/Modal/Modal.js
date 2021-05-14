@@ -12,7 +12,10 @@ class Modal extends React.Component {
         className={`modal-wrapper ${show ? "active" : ""}`}
       >
         <div className="modal" onClick={(e) => e.stopPropagation()}>
-          {this.props.children}
+          <div className="modal-header">
+            <i className="fas fa-times" onClick={onDismiss} />
+          </div>
+          <div className="modal-content">{this.props.children}</div>
         </div>
       </div>,
       document.querySelector("#modal")

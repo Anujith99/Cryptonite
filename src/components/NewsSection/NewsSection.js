@@ -2,6 +2,8 @@ import React from "react";
 import Slider from "../Slider/Slider";
 import Modal from "../Modal/Modal";
 
+import VideoModal from "./VideoModal/VideoModal";
+
 import { NEWS_TYPES } from "helpers/constants";
 
 class NewsSection extends React.Component {
@@ -37,11 +39,9 @@ class NewsSection extends React.Component {
             />
           ))}
         </div>
-        <Modal
-          show={this.state.showModal}
-          onDismiss={this.onDismiss}
-          item={this.state.selectedItem}
-        />
+        <Modal show={this.state.showModal} onDismiss={this.onDismiss}>
+          <VideoModal video={this.state.selectedItem} />
+        </Modal>
       </section>
     );
   }
