@@ -47,7 +47,7 @@ class Slider extends React.Component {
   };
 
   render() {
-    const { items, type, isLoading, error } = this.props;
+    const { items, type, isLoading, error, handleCardClick } = this.props;
     return (
       <div>
         <h5 className="slider-header">{type}</h5>
@@ -58,7 +58,12 @@ class Slider extends React.Component {
         ) : (
           <ReactSlider {...settings}>
             {items.map((item, index) => (
-              <SliderCard key={index} item={item} type={type} />
+              <SliderCard
+                key={index}
+                item={item}
+                type={type}
+                handleCardClick={handleCardClick}
+              />
             ))}
           </ReactSlider>
         )}

@@ -7,17 +7,17 @@ import { NEWS_TYPES } from "helpers/constants";
 class NewsSection extends React.Component {
   state = {
     showModal: false,
+    selectedItem: null,
   };
 
-  onDismiss = () => this.setState({ showModal: false });
+  onDismiss = () => this.setState({ showModal: false, selectedItem: null });
+  handleCardClick = (selectedItem) =>
+    this.setState({ showModal: true, selectedItem });
 
   render() {
     return (
       <section id="news" className="section">
         <div className="container">
-          <button onClick={(e) => this.setState({ showModal: true })}>
-            Show Modal
-          </button>
           {this.props.showHeader ? (
             <>
               <h3 className="section-header">
@@ -29,10 +29,19 @@ class NewsSection extends React.Component {
             </>
           ) : null}
           {NEWS_TYPES.map((type, index) => (
-            <Slider key={index} type={type} category={this.props.category} />
+            <Slider
+              key={index}
+              type={type}
+              category={this.props.category}
+              handleCardClick={this.handleCardClick}
+            />
           ))}
         </div>
-        <Modal show={this.state.showModal} onDismiss={this.onDismiss} />
+        <Modal
+          show={this.state.showModal}
+          onDismiss={this.onDismiss}
+          item={this.state.selectedItem}
+        />
       </section>
     );
   }

@@ -27,9 +27,9 @@ class SliderCard extends React.Component {
   };
 
   render() {
-    const { item, type } = this.props;
+    const { item, type, handleCardClick } = this.props;
     return (
-      <div className="slider-card">
+      <div className="slider-card" onClick={() => handleCardClick(item)}>
         <div className="slider-img-container">
           <img
             className={`slider-img ${
