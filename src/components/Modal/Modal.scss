@@ -1,0 +1,33 @@
+@import "styles/_mixins.scss";
+@import "styles/_variables.scss";
+
+.modal-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba($color: #000000, $alpha: 0.6);
+  z-index: 999;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.modal {
+  width: 90%;
+  height: 90%;
+  background: $white;
+  color: #292929;
+  @include set-border-radius(15px);
+}
+
+.modal-header {
+  width: 100%;
+  height: 40px;
+  text-align: right;
+}
