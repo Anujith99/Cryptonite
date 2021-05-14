@@ -1,0 +1,28 @@
+@import "styles/_mixins.scss";
+@import "styles/_variables.scss";
+
+.video-modal {
+  text-align: center;
+  padding: 20px;
+
+  @include for-size($mobile) {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.modal-iframe {
+  width: 80vw;
+  height: 80vh;
+  border: none;
+
+  @include for-size($tablet) {
+    width: 70vw;
+    height: 60vh;
+  }
+
+  @include for-size($mobile) {
+    width: 90vw;
+    height: 50vh;
+  }
+}

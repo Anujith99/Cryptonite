@@ -6,6 +6,22 @@ import { VIDEOS, AUDIO } from "helpers/constants";
 var relativeTime = require("dayjs/plugin/relativeTime");
 dayjs.extend(relativeTime);
 
+const CardLink = ({ type, handleCardClick, url, children }) => {
+  if (type === VIDEOS) {
+    return (
+      <div className="slider-card" onClick={handleCardClick}>
+        {children}
+      </div>
+    );
+  } else {
+    return (
+      <a className="slider-card" href={url} target="_blank" rel="noreferrer">
+        {children}
+      </a>
+    );
+  }
+};
+
 class SliderCard extends React.Component {
   formatDate = (date) => {
     if (!date) return null;
@@ -29,7 +45,11 @@ class SliderCard extends React.Component {
   render() {
     const { item, type, handleCardClick } = this.props;
     return (
-      <div className="slider-card" onClick={() => handleCardClick(item)}>
+      <CardLink
+        type={type}
+        handleCardClick={() => handleCardClick(item)}
+        url={item.url}
+      >
         <div className="slider-img-container">
           <img
             className={`slider-img ${
@@ -51,7 +71,7 @@ class SliderCard extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </CardLink>
     );
   }
 }

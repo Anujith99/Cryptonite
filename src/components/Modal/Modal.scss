@@ -19,8 +19,6 @@
 }
 
 .modal {
-  width: 90%;
-  height: 90%;
   background: $white;
   color: #292929;
   @include set-border-radius(15px);
@@ -30,4 +28,19 @@
   width: 100%;
   height: 40px;
   text-align: right;
+}
+
+.fa-times {
+  font-size: 24px;
+  padding: 15px 20px;
+  color: $primary;
+  cursor: pointer;
+  border-top-right-radius: 15px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: $primary;
+    color: $white;
+    transition: all 0.2s ease-in-out;
+  }
 }

@@ -23,6 +23,8 @@
   @include bg-glass;
   @include set-border-radius(20px);
   cursor: pointer;
+  color: $white;
+  text-decoration: none;
 
   &:hover {
     .slider-text {
