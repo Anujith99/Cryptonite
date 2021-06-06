@@ -1,0 +1,51 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.not-found-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include for-size(630px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.not-found-image {
+  width: 50%;
+  height: 50%;
+
+  @include for-size(630px) {
+    width: 100%;
+  }
+}
+
+.not-found-text {
+  h1 {
+    font-size: 4rem;
+    margin: 20px 0px;
+
+    @include for-size(630px) {
+      font-size: 3rem;
+    }
+  }
+  p {
+    margin-bottom: 40px;
+  }
+
+  @include for-size(630px) {
+    text-align: center;
+  }
+}
+
+.not-found-link {
+  color: $white;
+  text-decoration: none;
+  padding: 0.9rem 0.8rem;
+  @include set-border-radius(10px);
+
+  &:hover {
+    transition: all 0.4s ease;
+    background: rgba($color: $white, $alpha: 0.2);
+  }
+}

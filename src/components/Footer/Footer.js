@@ -11,7 +11,7 @@ class Footer extends React.Component {
       <div className="footer-section">
         <div className="container">
           <div className="footer-line" />
-          <div className="footer">
+          <div className="footer-links">
             <Link to="/" className="footer-logo">
               <Logo />
             </Link>
@@ -25,7 +25,20 @@ class Footer extends React.Component {
               Crypto Types
             </HashLink>
           </div>
-          <h6>© Cryptonite Inc.</h6>
+          <div className="footer-info">
+            <h6>© Cryptonite Inc.</h6>
+            <h5>
+              Developed and Designed by
+              <a
+                href="https://github.com/Anujith99"
+                target="_blank"
+                rel="noreferrer"
+                className="footer-github-link"
+              >
+                <i className="fab fa-github" /> Anujith
+              </a>
+            </h5>
+          </div>
         </div>
       </div>
     );
