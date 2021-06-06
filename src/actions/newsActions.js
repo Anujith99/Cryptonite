@@ -36,13 +36,6 @@ export const getArticles = (keyword, params) => {
       )
       .catch((err) => dispatch({ type: GET_ARTICLES_FAILED }));
   };
-  // return (dispatch) => {
-  //   dispatch({
-  //     type: GET_ARTICLES,
-  //     name: keyword,
-  //     payload: [],
-  //   });
-  // };
 };
 
 export const getVideos = (keyword, params) => {
@@ -63,13 +56,6 @@ export const getVideos = (keyword, params) => {
       )
       .catch((err) => dispatch({ type: GET_VIDEOS_FAILED }));
   };
-  // return (dispatch) => {
-  //   dispatch({
-  //     type: GET_VIDEOS,
-  //     name: keyword,
-  //     payload: [],
-  //   });
-  // };
 };
 
 export const getAudio = (keyword, params) => {
@@ -90,13 +76,6 @@ export const getAudio = (keyword, params) => {
       )
       .catch((err) => dispatch({ type: GET_AUDIO_FAILED }));
   };
-  // return (dispatch) => {
-  //   dispatch({
-  //     type: GET_AUDIO,
-  //     name: keyword,
-  //     payload: [],
-  //   });
-  // };
 };
 
 export const fetchSliderItems = (type, keyword, params) => {
