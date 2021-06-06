@@ -28,7 +28,7 @@ const PriceLabel = (props) => {
   return (
     <text
       x={index === 0 ? x - 5 : x + 5}
-      y={index === 0 ? y - 12 : y + 24}
+      y={index === 0 ? y + 16 : y + 24}
       fill={stroke}
       fontSize={index !== 6 ? 16 : 28}
       textAnchor={index === 0 ? "start" : "end"}
@@ -74,7 +74,7 @@ class GraphDisplay extends React.Component {
                     type="number"
                     hide={true}
                     stroke="#fff"
-                    domain={["dataMin-1000", "auto"]}
+                    domain={["dataMin-1000", "dataMin+1000"]}
                   />
                   <Line
                     type="monotone"
