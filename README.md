@@ -1,6 +1,6 @@
 # Cryptonite
 
-This is a simple website built completely from React.js for the cryptocurrency noob.  Some of the features of this website are:
+This is a simple website built completely from React.js for the cryptocurrency noob. Some of the features of this website are:
 
 - Frequently Asked Questions about Cryptocurrency.
 - Latest articles,videos and podcasts about cryptocurrency and 3 of the most popular cryptocurrencies (Bitcoin,Ethereum and Litecoin).
@@ -11,9 +11,9 @@ The deployed website can be found [here](https://itscryptonite.netlify.app/)
 
 ## About the Project
 
-I have been learning React for a few months now and decided to implement my existing knowledge  as well as learn new concepts by building
-this project. I decided to build a website as I can exhibit basic React  and development skills. I use [create-react-app](https://github.com/facebook/create-react-app) 
-for the project setup and the project was deployed on Netlify.  Some of the lessons I learnt during this process are:
+I have been learning React for a few months now and decided to implement my existing knowledge as well as learn new concepts by building
+this project. I decided to build a website as I can exhibit basic React and development skills. I use [create-react-app](https://github.com/facebook/create-react-app)
+for the project setup and the project was deployed on Netlify. Some of the lessons I learnt during this process are:
 
 - [SASS](https://github.com/sass/sass), specifically how to use variables, mixins and nesting.
 - Using [Immer](https://github.com/immerjs/immer) to work with an immutable state.
@@ -27,5 +27,7 @@ for the project setup and the project was deployed on Netlify.  Some of the less
 
 ## Conclusion
 
-It is definitely not a perfect project but it is a start. I've learned so  much while building this project and I'm happy that I could escape tutorial
+It is definitely not a perfect project but it is a start. I've learned so much while building this project and I'm happy that I could escape tutorial
 hell. I'm looking forward to building more projects and hopefully adding more features to this project.
+
+**NOTE:** If you would like to checkout my Figma design you can click [here](https://www.figma.com/file/3RzPywNIJLbuNmqbN293nx/CryptoNite-Project?node-id=1%3A33).
